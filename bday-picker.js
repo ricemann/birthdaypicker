@@ -186,10 +186,13 @@
           if (selectedMonth<10) selectedMonth="0"+selectedMonth;
           if (selectedDay<10) selectedDay="0"+selectedDay;
           hiddenDate = selectedYear + "-" + selectedMonth + "-" + selectedDay;
-          $(this).find('#'+settings["fieldId"]).val(hiddenDate);
-          if (settings["onChange"] != null) {
-            settings["onChange"](hiddenDate);
-          }
+        } else {
+          hiddenDate = null;
+        }
+
+        $(this).find('#'+settings["fieldId"]).val(hiddenDate);
+        if (settings["onChange"] != null) {
+          settings["onChange"](hiddenDate);
         }
       });
     });
